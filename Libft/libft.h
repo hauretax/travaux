@@ -53,5 +53,7 @@ char			*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 
 char			*ft_strsub(char const *s, unsigned int start, size_t len);
 char			*ft_strjoin(char const *s1, char const *s2);
+int				ft_strtrim_len(char const *s, int *i1, int *i2);
+char			*ft_strtrim(char const *s);
 
 #endif

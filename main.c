@@ -6,7 +6,7 @@
 
 int main(int argc, char **argv)
 {
-	if (argc < 2)
+	if (argc < 3)
 		{
 			printf("need 2 arg\n");
 			return (0);
@@ -15,6 +15,7 @@ int main(int argc, char **argv)
 	char *s2;
 	char *set;
 	int i;
+	int lens2;
 	int lens1;
 
 	lens1 = ft_strlen(argv[1]);
@@ -326,7 +327,7 @@ int main(int argc, char **argv)
 	printf("\n\n*****ft_memalloc*****\n");
 	s1 = (char *)ft_memalloc(0);
 	printf("%s\n", s1);
-	*/
+
 
 	printf("\n\n*****ft_strnew*****\n");
 	s1 = ft_strnew(10);
@@ -336,7 +337,7 @@ int main(int argc, char **argv)
 	s1 = ft_strdup(argv[1]);
 	ft_striter(s1, ft_strclr);
 	printf("%s\n", s1);
-
+*/
 	printf("\n\n*****ft_strsub*****\n");
 	s1 = ft_strdup(argv[1]);
 	i = 3;
@@ -349,7 +350,17 @@ int main(int argc, char **argv)
 	set = ft_strjoin(s1, s2);
 	printf("%s\n", set);
 
+	printf("\n\n*****ft_strtrim*****\n");
+	
+	s1 = ft_strdup(argv[1]);
 
+
+	lens1 = 0;
+	lens2 = 0;
+	i = ft_strtrim_len(s1, &lens1, &lens2);
+	printf("%d , %d\n",lens1, lens2);
+	set = ft_strtrim(s1);
+	printf("%s\n", set);
 
 
 
