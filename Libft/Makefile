@@ -44,6 +44,10 @@ S =		ft_memset.c \
 		ft_strnew.c \
 		ft_strdel.c \
 		ft_strclr.c \
+		ft_striter.c \
+		ft_striteri.c \
+		ft_strmap.c \
+		ft_strmapi.c \
 
 S_0 = (S:.c=.o)
 

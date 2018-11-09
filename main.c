@@ -32,7 +32,7 @@ int main(int argc, char **argv)
 
 
 
-
+	/*
 	printf("\n\n*****ft_bzero*****\n");
 	i = 0;
 	s1 = ft_strdup(argv[1]);
@@ -98,7 +98,7 @@ int main(int argc, char **argv)
 	free (s2);
  	*/
 
-
+	/*
 	printf("\n\n*****ft_memmove*****\n");
 	s1 = ft_strdup(argv[1]);
 	s2 = ft_strdup(argv[2]);
@@ -229,7 +229,7 @@ int main(int argc, char **argv)
 	printf("\n\n*****ft_strlcat*****\n");
 	s1 = ft_strdup(argv[1]);
 	s2 = ft_strdup(argv[2]);
-	i = strlcat(s2, s1, 4);
+	//i = strlcat(s2, s1, 4);
 	printf("%s\n", s1);
 	printf("%s\n", s2);
 	printf("%d\n", i);
@@ -245,7 +245,7 @@ int main(int argc, char **argv)
 
 
 
-
+	
 	printf("\n\n*****ft_strchr*****\n");
 	s1 = strdup(argv[1]);
 	set = strchr(s1, 'd');
@@ -255,11 +255,10 @@ int main(int argc, char **argv)
 		printf("\n");
 
 	s1 = strdup(argv[1]);
-	set = ft_strchr(s1, 'd');
+	//set = ft_strchr(s1, 'd');
 	printf("%s\n", s1);
 	printf("%s\n", set);
-
-
+	
 
 
 	printf("\n\n*****ft_strrchr*****\n");
@@ -300,7 +299,7 @@ int main(int argc, char **argv)
 	printf("\n\n*****ft_strstr*****\n");
 	s1 = strdup(argv[1]);
 	s2 = strdup(argv[2]);
-	set = strnstr(s1, s2, 4);
+	//set = strnstr(s1, s2, 4);
 	printf("%s\n", s1);
 	printf("%s\n", s2);
 	printf("%s\n", set);
@@ -327,20 +326,28 @@ int main(int argc, char **argv)
 	printf("\n\n*****ft_memalloc*****\n");
 	s1 = (char *)ft_memalloc(0);
 	printf("%s\n", s1);
-
+	*/
 
 	printf("\n\n*****ft_strnew*****\n");
 	s1 = ft_strnew(10);
 	printf("%s\n", s1);
 
+	printf("\n\n*****ft_striter*****\n");
+	s1 = ft_strdup(argv[1]);
+	ft_striter(s1, ft_strclr);
+	printf("%s\n", s1);
 
+	printf("\n\n*****ft_strsub*****\n");
+	s1 = ft_strdup(argv[1]);
+	i = 3;
+	set = ft_strsub(s1, i, ft_strlen(s1) - i); //len = len + '\0' ?
+	printf("%s\n", set);
 
-
-
-
-
-
-
+	printf("\n\n*****ft_strjoin*****\n");
+	s1 = ft_strdup(argv[1]);
+	s2 = ft_strdup(argv[2]);
+	set = ft_strjoin(s1, s2);
+	printf("%s\n", set);
 
 
 
