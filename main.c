@@ -33,7 +33,7 @@ int main(int argc, char **argv)
 
 
 
-	/*
+	
 	printf("\n\n*****ft_bzero*****\n");
 	i = 0;
 	s1 = ft_strdup(argv[1]);
@@ -99,7 +99,7 @@ int main(int argc, char **argv)
 	free (s2);
  	*/
 
-	/*
+	
 	printf("\n\n*****ft_memmove*****\n");
 	s1 = ft_strdup(argv[1]);
 	s2 = ft_strdup(argv[2]);
@@ -337,7 +337,7 @@ int main(int argc, char **argv)
 	s1 = ft_strdup(argv[1]);
 	ft_striter(s1, ft_strclr);
 	printf("%s\n", s1);
-*/
+
 	printf("\n\n*****ft_strsub*****\n");
 	s1 = ft_strdup(argv[1]);
 	i = 3;
