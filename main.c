@@ -351,10 +351,7 @@ int main(int argc, char **argv)
 	printf("%s\n", set);
 
 	printf("\n\n*****ft_strtrim*****\n");
-	
 	s1 = ft_strdup(argv[1]);
-
-
 	lens1 = 0;
 	lens2 = 0;
 	i = ft_strtrim_len(s1, &lens1, &lens2);
@@ -364,7 +361,21 @@ int main(int argc, char **argv)
 
 
 
+	ft_putendl("\n\n*****ft_strsplit*****");
+	s1 = ft_strdup(argv[1]);
+	lens1 = ft_cmpw(s1, ' ');
+	printf(":%d:\n", lens1);
+	ft_print_tab(ft_strsplit(s1, ' '));
 
+
+	ft_putstr("\n\n*****ft_strsplit*****\n");
+		printf("%d\n",ft_sizint(400));
+		printf("%d , %d\n",-58 / 10, ABS(-58 / 10));
+		printf("%s\n", ft_itoa(1));
+
+
+	ft_putendl("\n\n*****ft_strsplit*****");
+	ft_putchar_fd('c', 2);
 
 
 	return (0);
