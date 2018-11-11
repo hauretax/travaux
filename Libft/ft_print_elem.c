@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_print_elem.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hutricot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/07 11:34:19 by hutricot          #+#    #+#             */
-/*   Updated: 2018/11/11 13:30:16 by hutricot         ###   ########.fr       */
+/*   Created: 2018/11/11 13:47:28 by hutricot          #+#    #+#             */
+/*   Updated: 2018/11/11 15:14:56 by hutricot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+void	ft_print_elem(t_list *begin_list)
 {
-	unsigned char *ssrc;
-	unsigned char *ddest;
+	t_list *tmp;
 
-	ssrc = (unsigned char *)src;
-	ddest = (unsigned char *)dest;
-	if (n == 0 || dest == src)
-		return (dest);
-	while (--n)
-		*ddest++ = *ssrc++;
-	*ddest = *ssrc;
-	return (ddest);
+	tmp = begin_list;
+	if (tmp == NULL)
+		return ;
+	while (tmp->next != NULL)
+	{
+		ft_putstr((char *)tmp->content);
+		tmp = tmp->next;
+	}
+	ft_putstr((char *)tmp->content);
 }

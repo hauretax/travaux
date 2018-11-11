@@ -77,8 +77,8 @@ int main(int argc, char **argv)
 	free (s1);
 	free (s2);
 
-
-	/*
+/*
+	
 	printf("\n\n*****ft_memccpy*****\n");
 	s1 = ft_strdup(argv[1]);
 	s2 = ft_strdup(argv[2]);
@@ -376,6 +376,27 @@ int main(int argc, char **argv)
 
 	ft_putendl("\n\n*****ft_strsplit*****");
 	ft_putchar_fd('c', 2);
+
+	ft_putendl("\n\n*****ft_lst*****");
+	t_list *maillon;
+	t_list *maillon1;
+	t_list *maillon2;
+	t_list *maillon3;
+	s1 = ft_strdup(argv[1]);
+	s2 = ft_strdup(argv[2]);
+	maillon = ft_lstnew(s1, ft_strlen(s1));
+	maillon1 = ft_lstnew(s2, ft_strlen(s1));
+	maillon2 = ft_lstnew("cdr", ft_strlen("cdr"));
+	maillon3 = ft_lstnew("lol", ft_strlen("lol"));
+	ft_list_push_front(&maillon, maillon1);
+	ft_print_elem(maillon1);
+	ft_putendl("");
+	ft_lstadd_b(&maillon1, maillon2);
+	ft_lstadd_b(&maillon1, maillon3);
+	ft_print_elem(maillon1);
+	ft_putendl("");
+	ft_putnbr(ft_lstsize(maillon1));
+	ft_putendl("");
 
 
 	return (0);
