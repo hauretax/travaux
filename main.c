@@ -341,7 +341,7 @@ int main(int argc, char **argv)
 	printf("\n\n*****ft_strsub*****\n");
 	s1 = ft_strdup(argv[1]);
 	i = 3;
-	set = ft_strsub(s1, i, ft_strlen(s1) - i); //len = len + '\0' ?
+	set = ft_strsub(s1, i, ft_strlen(s1) - i + 1); //len = len + '\0' ?
 	printf("%s\n", set);
 
 	printf("\n\n*****ft_strjoin*****\n");
@@ -384,11 +384,11 @@ int main(int argc, char **argv)
 	t_list *maillon3;
 	s1 = ft_strdup(argv[1]);
 	s2 = ft_strdup(argv[2]);
-	maillon = ft_lstnew(s1, ft_strlen(s1));
-	maillon1 = ft_lstnew(s2, ft_strlen(s1));
-	maillon2 = ft_lstnew("cdr", ft_strlen("cdr"));
-	maillon3 = ft_lstnew("lol", ft_strlen("lol"));
-	ft_list_push_front(&maillon, maillon1);
+	maillon = ft_lstnew(s1, ft_strlen(s1) + 1);
+	maillon1 = ft_lstnew(s2, ft_strlen(s1) + 1);
+	maillon2 = ft_lstnew("cdr", ft_strlen("cdr") + 1);
+	maillon3 = ft_lstnew("lol", ft_strlen("lol") + 1);
+	ft_lstadd(&maillon, maillon1);
 	ft_print_elem(maillon1);
 	ft_putendl("");
 	ft_lstadd_b(&maillon1, maillon2);
@@ -396,6 +396,8 @@ int main(int argc, char **argv)
 	ft_print_elem(maillon1);
 	ft_putendl("");
 	ft_putnbr(ft_lstsize(maillon1));
+	ft_putendl("");
+	ft_print_elem(maillon1);
 	ft_putendl("");
 
 

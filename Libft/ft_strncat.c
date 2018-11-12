@@ -6,7 +6,7 @@
 /*   By: hutricot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/07 15:00:43 by hutricot          #+#    #+#             */
-/*   Updated: 2018/11/08 15:59:28 by hutricot         ###   ########.fr       */
+/*   Updated: 2018/11/12 14:55:30 by hutricot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_strncat(char *dest, const char *src, size_t n)
 {
-	int i;
-	int i2;
+	size_t i;
+	size_t i2;
 
 	i = 0;
 	i2 = 0;

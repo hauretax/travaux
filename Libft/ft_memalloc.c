@@ -6,7 +6,7 @@
 /*   By: hutricot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/08 13:55:33 by hutricot          #+#    #+#             */
-/*   Updated: 2018/11/08 16:02:37 by hutricot         ###   ########.fr       */
+/*   Updated: 2018/11/12 15:18:59 by hutricot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	*ft_memalloc(size_t size)
 	v = (void *)s;
 	while (size--)
 	{
-		*s = '0';
+		*s = 0;
 		s++;
 	}
 	return (v);

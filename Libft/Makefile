@@ -23,13 +23,15 @@ S =		ft_memset.c \
 		ft_strlen.c \
 		ft_strdup.c \
 		ft_strcpy.c \
-		ft_strcpy.c \
+		ft_strcmp.c \
+		ft_strncmp.c \
 		ft_strcat.c \
 		ft_strncat.c \
 		ft_strlcat.c \
 		ft_strchr.c \
 		ft_strrchr.c \
 		ft_strstr.c \
+		ft_strncpy.c \
 		ft_strnstr.c \
 		ft_isalpha.c \
 		ft_isdigit.c \
@@ -53,8 +55,12 @@ S =		ft_memset.c \
 		ft_strsub.c \
 		ft_strjoin.c \
 		ft_strtrim.c \
+		ft_strtrim_len.c \
+		ft_cmpw.c \
 		ft_strsplit.c \
+		ft_print_tab.c \
 		ft_itoa.c \
+		ft_sizint.c \
 		ft_putchar.c \
 		ft_putstr.c \
 		ft_putendl.c \
@@ -63,8 +69,17 @@ S =		ft_memset.c \
 		ft_putstr_fd.c \
 		ft_putendl_fd.c \
 		ft_putnbr_fd.c \
+		ft_lstnew.c \
+		ft_lstadd.c \
+		ft_lstiter.c \
+		ft_print_elem.c \
+		ft_lstdelone.c \
+		ft_lstadd_b.c \
+		ft_lstsize.c \
+		ft_lstmap.c
 
-S_0 = (S:.c=.o)
+
+S_O = $(S:.c=.o)
 
 
 all: $(NAME)

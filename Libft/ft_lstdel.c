@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
+/*   ft_lstdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hutricot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/11 15:45:01 by hutricot          #+#    #+#             */
-/*   Updated: 2018/11/11 16:12:15 by hutricot         ###   ########.fr       */
+/*   Created: 2018/11/12 11:23:48 by hutricot          #+#    #+#             */
+/*   Updated: 2018/11/12 14:59:26 by hutricot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,26 +15,15 @@
 void	ft_lstdel(t_list **alst, void (*del)(void *, size_t))
 {
 	t_list	*tmp;
-	t_list	*stmp;
+	t_list	*ntmp;
 
-	if (*alst == NULL)
-		return ;
-	while (1)
+	tmp = *alst;
+	while (tmp->next != NULL)
 	{
-		tmp = *alst;
-		if (tmp->next == NULL)
-		{
-			free (tmp);
-			break ;
-		}
-		stmp = *alst;
-		while (tmp->next != NULL)
-		{
-			stmp = tmp;
-			tmp = tmp->next;
-		}
-		stmp->next = NULL;
-		free (tmp);
+		ntmp = tmp->next;
+		del(tmp->content, tmp->content_size);
+		free(tmp);
+		tmp = ntmp;
 	}
-	alst = (NULL);
+	*alst = (NULL);
 }

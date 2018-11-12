@@ -43,6 +43,7 @@ char			*ft_strrchr(const char *s, int c);
 char			*ft_strstr(char *str, char *to_find);
 char			*ft_strnstr(char *str, char *to_find, size_t n);
 int				ft_isalpha(char *str);
+int				ft_strcmp(const char *s1, const char *s2);
 int				ft_isdigit(char *str);
 int				ft_isalnum(char *str);
 int				ft_isascii(char *str);
@@ -80,9 +81,11 @@ void			ft_putendl_fd(char const *s, int fd);
 void			ft_putnbr_fd(int n, int fd);
 t_list			*ft_lstnew(void const *content, size_t content_size);
 void			ft_print_elem(t_list *begin_list);
-void			ft_list_push_front(t_list **alst, t_list *new);
 void			ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 void			ft_lstadd_b(t_list **b_l, t_list *new);
 int				ft_lstsize(t_list *b_l);
+void			ft_lstdelone(t_list **alst, void (*del) (void *, size_t));
+void			ft_lstdel(t_list **alst, void (*del)(void *, size_t));
+void			ft_lstadd(t_list **alst, t_list *new);
 
 #endif

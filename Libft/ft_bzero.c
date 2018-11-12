@@ -6,7 +6,7 @@
 /*   By: hutricot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/07 11:06:19 by hutricot          #+#    #+#             */
-/*   Updated: 2018/11/08 15:56:06 by hutricot         ###   ########.fr       */
+/*   Updated: 2018/11/12 13:17:16 by hutricot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@ void	ft_bzero(void *s, size_t n)
 {
 	char *tmp;
 
-	if (s == NULL)
-		return ;
 	tmp = (char*)s;
 	while (n--)
 	{
