@@ -6,7 +6,7 @@
 /*   By: hutricot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/10 15:58:44 by hutricot          #+#    #+#             */
-/*   Updated: 2018/11/10 16:07:20 by hutricot         ###   ########.fr       */
+/*   Updated: 2018/11/14 17:51:48 by hutricot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	ft_putendl(char const *s)
 {
 	int i;
 
+	if (s == 0)
+		return ;
 	i = 0;
 	while (s[i])
 	{

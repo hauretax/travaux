@@ -6,7 +6,7 @@
 /*   By: hutricot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/10 16:25:07 by hutricot          #+#    #+#             */
-/*   Updated: 2018/11/10 16:25:30 by hutricot         ###   ########.fr       */
+/*   Updated: 2018/11/14 17:53:04 by hutricot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	ft_putstr_fd(char const *str, int fd)
 {
 	int i;
 
+	if (str == 0)
+		return ;
 	i = 0;
 	while (str[i])
 	{

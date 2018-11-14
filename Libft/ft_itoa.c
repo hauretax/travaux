@@ -6,7 +6,7 @@
 /*   By: hutricot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/10 13:45:52 by hutricot          #+#    #+#             */
-/*   Updated: 2018/11/10 15:58:06 by hutricot         ###   ########.fr       */
+/*   Updated: 2018/11/14 17:48:58 by hutricot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,11 @@ char	*ft_itoa(int n)
 	char	*sr;
 
 	i = ft_sizint(n);
+	if (n == 0)
+		return ("0");
 	if (n < 0)
 		i++;
-	if ((sr = malloc(sizeof(char) * i + 1)) == 0)
+	if ((sr = ft_strnew(i)) == 0)
 		return (NULL);
 	sr[i] = '\0';
 	if (n < 0)
