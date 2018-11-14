@@ -6,12 +6,14 @@
 #    By: hutricot <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/06 18:46:03 by hutricot          #+#    #+#              #
-#    Updated: 2018/11/07 10:42:04 by hutricot         ###   ########.fr        #
+#    Updated: 2018/11/14 13:20:19 by hutricot         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
 NAME = libft.a
+
+FLAGS = -Wall -Wextra -Werror
 
 S =		ft_memset.c \
 		ft_bzero.c \
@@ -76,7 +78,7 @@ S =		ft_memset.c \
 		ft_lstdelone.c \
 		ft_lstadd_b.c \
 		ft_lstsize.c \
-		ft_lstmap.c
+		ft_lstmap.c \
 
 
 S_O = $(S:.c=.o)
@@ -84,7 +86,7 @@ S_O = $(S:.c=.o)
 
 all: $(NAME)
 $(NAME) :
-	gcc -c $(S) -I ./ 
+	gcc $(FLAGS) -c $(S) -I ./ 
 	ar rc $(NAME) $(S_O)
 
 clean :

@@ -6,18 +6,13 @@
 /*   By: hutricot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/08 12:00:28 by hutricot          #+#    #+#             */
-/*   Updated: 2018/11/08 12:00:47 by hutricot         ###   ########.fr       */
+/*   Updated: 2018/11/14 13:01:12 by hutricot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_isdigit(char *str)
+int		ft_isdigit(int c)
 {
-	int i;
-
-	i = 0;
-	while (str[i] <= '9' && str[i] >= '0' && str[i])
-		i++;
-	if (str[i] == '\0')
+	if (c <= '9' && c >= '0')
 		return (1);
 	return (0);
 }

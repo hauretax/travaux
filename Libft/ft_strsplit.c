@@ -6,7 +6,7 @@
 /*   By: hutricot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/10 11:52:10 by hutricot          #+#    #+#             */
-/*   Updated: 2018/11/10 13:44:40 by hutricot         ###   ########.fr       */
+/*   Updated: 2018/11/14 17:24:12 by hutricot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,28 +14,29 @@
 
 char	**ft_strsplit(char const *s, char c)
 {
-	int		start;
-	int		end;
+	int		t[3];
 	char	**tr;
-	int		i;
 
-	start = 0;
-	end = 0;
-	i = 0;
+	t[1] = 0;
+	t[2] = 0;
+	t[0] = 0;
+	if (s == 0)
+		return (0);
 	if ((tr = (char **)malloc((ft_cmpw(s, c) + 1) * sizeof(char *))) == 0)
 		return (NULL);
-	while (s[start] && s[end])
+	while (s[t[1]] && s[t[2]])
 	{
-		while (s[start] == c && s[start])
-			start++;
-		end = start;
-		while (s[end] != c && s[end])
-			end++;
-		tr[i] = ft_strsub(s, start, end - start + 1);
-		start = end;
-		while (s[start] == c && s[start])
-			start++;
-		i++;
+		while (s[t[1]] == c)
+			t[1]++;
+		t[2] = t[1];
+		while (s[t[2]] != c && s[t[2]])
+			t[2]++;
+		tr[t[0]] = ft_strsub(s, t[1], t[2] - t[1]);
+		t[1] = t[2];
+		while (s[t[1]] == c)
+			t[1]++;
+		t[0]++;
 	}
+	tr[t[0]] = NULL;
 	return (tr);
 }

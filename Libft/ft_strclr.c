@@ -6,14 +6,18 @@
 /*   By: hutricot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/08 16:13:17 by hutricot          #+#    #+#             */
-/*   Updated: 2018/11/08 16:22:05 by hutricot         ###   ########.fr       */
+/*   Updated: 2018/11/14 13:33:56 by hutricot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 void	ft_strclr(char *s)
 {
 	int i;
 
+	if (s == NULL)
+		return ;
 	i = 0;
 	while (s[i])
 	{

@@ -6,7 +6,7 @@
 /*   By: hutricot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/08 10:15:56 by hutricot          #+#    #+#             */
-/*   Updated: 2018/11/08 16:00:38 by hutricot         ###   ########.fr       */
+/*   Updated: 2018/11/14 11:50:42 by hutricot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ char	*ft_strrchr(const char *s, int c)
 			sav = i;
 		i++;
 	}
+	if (s1[i] == c)
+		sav = i;
 	if (sav > -1)
 		return (s1 + sav);
 	return (NULL);

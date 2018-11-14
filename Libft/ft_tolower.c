@@ -6,20 +6,13 @@
 /*   By: hutricot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/08 12:24:33 by hutricot          #+#    #+#             */
-/*   Updated: 2018/11/08 12:25:23 by hutricot         ###   ########.fr       */
+/*   Updated: 2018/11/14 13:45:08 by hutricot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_tolower(char *str)
+int		ft_tolower(int c)
 {
-	int i;
-
-	i = 0;
-	while (str[i])
-	{
-		if (str[i] <= 'Z' && str[i] >= 'A')
-			str[i] = str[i] + 32;
-		i++;
-	}
-	return (str);
+	if (c <= 'Z' && c >= 'A')
+		c = c + 32;
+	return (c);
 }

@@ -6,7 +6,7 @@
 /*   By: hutricot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/10 10:48:43 by hutricot          #+#    #+#             */
-/*   Updated: 2018/11/10 11:41:56 by hutricot         ###   ########.fr       */
+/*   Updated: 2018/11/14 14:58:05 by hutricot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	ft_strtrim_len(char const *s, int *i1, int *i2)
 	while ((s[y1] == ' ' || s[y1] == '\n' || s[y1] == '\t') && s[y1])
 		y1++;
 	if (s[y1] == '\0')
-		return (1);
+		y1 = 0;
 	y2 = y1;
 	while (s[y2])
 		y2++;

@@ -6,7 +6,7 @@
 /*   By: hutricot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/08 10:00:44 by hutricot          #+#    #+#             */
-/*   Updated: 2018/11/08 16:00:18 by hutricot         ###   ########.fr       */
+/*   Updated: 2018/11/14 11:49:02 by hutricot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,7 @@ char	*ft_strchr(const char *s, int c)
 			return (s1 + i);
 		i++;
 	}
-	return (NULL);
+	if (s1[i] == c)
+		return (s1 + i);
+	return (0);
 }

@@ -6,19 +6,13 @@
 /*   By: hutricot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/08 11:55:03 by hutricot          #+#    #+#             */
-/*   Updated: 2018/11/08 11:56:24 by hutricot         ###   ########.fr       */
+/*   Updated: 2018/11/14 12:59:11 by hutricot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_isalpha(char *str)
+int		ft_isalpha(int c)
 {
-	int i;
-
-	i = 0;
-	while ((str[i] <= 'z' && str[i] >= 'a' && str[i]) || (str[i] <= 'Z' &&
-			str[i] >= 'A' && str[i]))
-		i++;
-	if (str[i] == '\0')
+	if ((c <= 'z' && c >= 'a') || (c <= 'Z' && c >= 'A'))
 		return (1);
 	return (0);
 }

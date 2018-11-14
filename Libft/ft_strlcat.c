@@ -6,7 +6,7 @@
 /*   By: hutricot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/07 15:32:56 by hutricot          #+#    #+#             */
-/*   Updated: 2018/11/12 15:15:58 by hutricot         ###   ########.fr       */
+/*   Updated: 2018/11/14 11:44:33 by hutricot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ unsigned int	ft_strlcat(char *dest, const char *src, size_t size)
 		i++;
 	while (src[i2])
 		i2++;
+	if (size < i + 1)
+		return (i2 + size);
 	t = i + i2;
 	i2 = 0;
 	while (src[i2] && (i2 + i + 1) < size)

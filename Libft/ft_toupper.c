@@ -6,20 +6,13 @@
 /*   By: hutricot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/08 12:25:54 by hutricot          #+#    #+#             */
-/*   Updated: 2018/11/08 12:28:44 by hutricot         ###   ########.fr       */
+/*   Updated: 2018/11/14 13:45:21 by hutricot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_toupper(char *str)
+int	ft_toupper(int c)
 {
-	int i;
-
-	i = 0;
-	while (str[i])
-	{
-		if (str[i] <= 'z' && str[i] >= 'a')
-			str[i] = str[i] - 32;
-		i++;
-	}
-	return (str);
+	if (c <= 'z' && c >= 'a')
+		c = c - 32;
+	return (c);
 }

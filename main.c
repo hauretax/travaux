@@ -362,13 +362,26 @@ int main(int argc, char **argv)
 
 
 	ft_putendl("\n\n*****ft_strsplit*****");
-	s1 = ft_strdup(argv[1]);
-	lens1 = ft_cmpw(s1, ' ');
-	printf(":%d:\n", lens1);
-	ft_print_tab(ft_strsplit(s1, ' '));
+//	s1 = ft_strdup(argv[1]);
+//	lens1 = ft_cmpw(s1, '|');
+//	printf(":%d:\n", lens1);
+//	ft_print_tab(ft_strsplit(s1, '|'));
+
+printf("coucou2\n");
+	char *s = "split  ||this|for|me|||||!|";
+	i = 0;
+
+	char **result = ft_strsplit(s, '|');
+
+	while (result[i])
+	{
+		free(result[i]);
+		i++;
+	}
+	free(result);
 
 
-	ft_putstr("\n\n*****ft_strsplit*****\n");
+	ft_putstr("\n\n*****ft_itoa*****\n");
 		printf("%d\n",ft_sizint(400));
 		printf("%d , %d\n",-58 / 10, ABS(-58 / 10));
 		printf("%s\n", ft_itoa(1));

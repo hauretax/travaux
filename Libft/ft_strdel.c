@@ -6,7 +6,7 @@
 /*   By: hutricot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/08 15:50:22 by hutricot          #+#    #+#             */
-/*   Updated: 2018/11/08 16:09:12 by hutricot         ###   ########.fr       */
+/*   Updated: 2018/11/14 13:31:50 by hutricot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void	ft_strdel(char **as)
 {
+	if (as == NULL)
+		return ;
 	free(*as);
 	*as = (NULL);
 }
