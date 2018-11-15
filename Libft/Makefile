@@ -62,7 +62,6 @@ S =		ft_memset.c \
 		ft_strsplit.c \
 		ft_print_tab.c \
 		ft_itoa.c \
-		ft_sizint.c \
 		ft_putchar.c \
 		ft_putstr.c \
 		ft_putendl.c \

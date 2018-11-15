@@ -6,20 +6,44 @@
 /*   By: hutricot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/10 13:45:52 by hutricot          #+#    #+#             */
-/*   Updated: 2018/11/14 17:48:58 by hutricot         ###   ########.fr       */
+/*   Updated: 2018/11/15 16:41:22 by hutricot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_itoa(int n)
+static int		ft_sizint(int n)
+{
+	int i;
+
+	i = 0;
+	while (n != 0)
+	{
+		n = n / 10;
+		i++;
+	}
+	return (i);
+}
+
+static	char	*idea_zero(void)
+{
+	char	*sr;
+
+	if ((sr = ft_strnew(1)) == 0)
+		return (NULL);
+	sr[0] = '0';
+	sr[1] = '\0';
+	return (sr);
+}
+
+char			*ft_itoa(int n)
 {
 	int		i;
 	char	*sr;
 
 	i = ft_sizint(n);
 	if (n == 0)
-		return ("0");
+		return (idea_zero());
 	if (n < 0)
 		i++;
 	if ((sr = ft_strnew(i)) == 0)

@@ -6,13 +6,13 @@
 /*   By: hutricot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/08 15:34:09 by hutricot          #+#    #+#             */
-/*   Updated: 2018/11/14 13:29:19 by hutricot         ###   ########.fr       */
+/*   Updated: 2018/11/15 15:31:15 by hutricot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_strnew(size_t size)
+char	*ft_strnew(size_t size)
 {
 	char *s;
 
