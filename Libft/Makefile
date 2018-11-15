@@ -13,7 +13,7 @@
 
 NAME = libft.a
 
-FLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -I ./
 
 S =		ft_memset.c \
 		ft_bzero.c \
@@ -76,17 +76,17 @@ S =		ft_memset.c \
 		ft_lstiter.c \
 		ft_print_elem.c \
 		ft_lstdelone.c \
+		ft_lstdel.c \
 		ft_lstadd_b.c \
 		ft_lstsize.c \
-		ft_lstmap.c \
+		ft_lstmap.c 
 
 
 S_O = $(S:.c=.o)
 
 
 all: $(NAME)
-$(NAME) :
-	gcc $(FLAGS) -c $(S) -I ./ 
+$(NAME) : $(S_O) 
 	ar rc $(NAME) $(S_O)
 
 clean :

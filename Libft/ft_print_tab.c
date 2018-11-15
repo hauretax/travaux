@@ -6,7 +6,7 @@
 /*   By: hutricot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/10 12:36:19 by hutricot          #+#    #+#             */
-/*   Updated: 2018/11/10 13:04:28 by hutricot         ###   ########.fr       */
+/*   Updated: 2018/11/15 13:57:21 by hutricot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	ft_print_tab(char **tab)
 	int i;
 	int ii;
 
+	if (tab == 0)
+		return ;
 	i = 0;
 	while (tab[i])
 	{
