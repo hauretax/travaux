@@ -6,7 +6,7 @@
 /*   By: hutricot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/08 10:53:50 by hutricot          #+#    #+#             */
-/*   Updated: 2018/11/15 14:46:00 by hutricot         ###   ########.fr       */
+/*   Updated: 2018/11/16 11:27:44 by hutricot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,20 @@
 
 char	*ft_strnstr(char const *str, char const *to_find, size_t n)
 {
+	size_t i;
 	size_t y;
 
+	i = 0;
 	if (*to_find == '\0')
 		return ((char *)str);
-	y = ft_strlen((char *)to_find);
-	while (*str && n >= y)
+	while (str[i] && i < n)
 	{
-		if (*str == *to_find && (ft_memcmp(str, to_find, y)) == 0)
-			return ((char *)str);
-		str++;
-		n--;
+		y = 0;
+		while (str[i + y] == to_find[y] && to_find[y] && (i + y) < n)
+			y++;
+		if (to_find[y] == '\0')
+			return (((char *)str) + i);
+		i++;
 	}
 	return (0);
 }
