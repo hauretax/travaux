@@ -6,13 +6,12 @@
 /*   By: hutricot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/07 10:38:03 by hutricot          #+#    #+#             */
-/*   Updated: 2018/11/07 11:11:04 by hutricot         ###   ########.fr       */
+/*   Updated: 2018/11/17 13:18:32 by hutricot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
-# define ABS(x) ((x < 0) ? (-x) : (x))
 # include <stdlib.h>
 # include <string.h>
 # include <unistd.h>
@@ -32,19 +31,19 @@ void				*ft_memmove(void *dest, const void *src, size_t n);
 void				*ft_memchr(const void *src, int c, size_t n);
 int					ft_memcmp(const void *s1, const void *s2, size_t n);
 size_t				ft_strlen(const char *str);
-char				*ft_strdup(char *src);
+char				*ft_strdup(const char *src);
 char				*ft_strcpy(char *dest, const char *src);
 char				*ft_strncpy(char *dest, const char *src, size_t n);
 char				*ft_strcat(char *dest, const char *src);
 char				*ft_strncat(char *dest, const char *src, size_t n);
-unsigned int		ft_strlcat(char *dest, const char *src, size_t n);
+size_t				ft_strlcat(char *dest, const char *src, size_t n);
 char				*ft_strchr(const char *s, int c);
 char				*ft_strrchr(const char *s, int c);
-char				*ft_strstr(char *str, char *to_find);
+char				*ft_strstr(const char *str, const char *to_find);
 char				*ft_strnstr(const char *str, const char *to_find, size_t n);
 int					ft_isalpha(int c);
 int					ft_strcmp(const char *s1, const char *s2);
-int					ft_strncmp(const char *s1, const char *s2, int n);
+int					ft_strncmp(const char *s1, const char *s2, size_t n);
 int					ft_isdigit(int c);
 int					ft_isalnum(int c);
 int					ft_isascii(int c);

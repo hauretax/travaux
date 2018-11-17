@@ -6,7 +6,7 @@
 /*   By: hutricot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/10 11:52:10 by hutricot          #+#    #+#             */
-/*   Updated: 2018/11/16 10:10:54 by hutricot         ###   ########.fr       */
+/*   Updated: 2018/11/17 11:22:11 by hutricot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,10 @@ char			**ft_strsplit(char const *s, char c)
 		return (0);
 	if (ft_cmpw(s, c) == 0)
 	{
-		tr = malloc(1);
-		tr[0] = malloc(1);
+		if ((tr = malloc(1)) == 0)
+			return (NULL);
+		if ((tr[0] = malloc(1)) == 0)
+			return (NULL);
 		tr[0] = NULL;
 		return (tr);
 	}

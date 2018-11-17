@@ -6,7 +6,7 @@
 /*   By: hutricot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/10 13:45:52 by hutricot          #+#    #+#             */
-/*   Updated: 2018/11/15 16:41:22 by hutricot         ###   ########.fr       */
+/*   Updated: 2018/11/17 11:56:18 by hutricot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static int		ft_sizint(int n)
 	return (i);
 }
 
-static	char	*idea_zero(void)
+static char		*idea_zero(void)
 {
 	char	*sr;
 
@@ -34,6 +34,13 @@ static	char	*idea_zero(void)
 	sr[0] = '0';
 	sr[1] = '\0';
 	return (sr);
+}
+
+static int		idea_neg(int n)
+{
+	if (n < 0)
+		return (((n % 10) * -1));
+	return (n % 10);
 }
 
 char			*ft_itoa(int n)
@@ -54,11 +61,11 @@ char			*ft_itoa(int n)
 	i--;
 	while (i > 0)
 	{
-		sr[i] = (ABS((n % 10)) + '0');
+		sr[i] = (idea_neg(n) + '0');
 		i--;
 		n = n / 10;
 	}
 	if (sr[0] == '\0')
-		sr[i] = (ABS((n % 10)) + '0');
+		sr[i] = (idea_neg(n) + '0');
 	return (sr);
 }
