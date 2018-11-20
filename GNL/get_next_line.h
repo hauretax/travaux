@@ -6,13 +6,13 @@
 /*   By: hutricot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/17 13:41:41 by hutricot          #+#    #+#             */
-/*   Updated: 2018/11/18 15:25:09 by hutricot         ###   ########.fr       */
+/*   Updated: 2018/11/20 17:25:11 by hutricot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
-# define BUFF_SIZE 
+# define BUFF_SIZE 50 
 # include "libft/libft.h"
 
 
