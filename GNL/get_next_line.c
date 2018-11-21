@@ -5,33 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hutricot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/17 14:29:12 by hutricot          #+#    #+#             */
-/*   Updated: 2018/11/20 17:25:08 by hutricot         ###   ########.fr       */
+/*   Created: 2018/11/21 08:57:26 by hutricot          #+#    #+#             */
+/*   Updated: 2018/11/21 14:56:21 by hutricot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-char	*ft_strjoin_f(char *s1, char *s2)
-{
-	char *str;
-	if (s1 == NULL)
-	{
-		if((str = ft_strdup(s2)) == 0)
-			return (0);
-		return (str);
-	}
-	else
-	{
-		if ((str = ft_strjoin(s1, s2)) == 0)
-			return (0);
-		free(s1);
-		s1 = NULL;
-		return (str);
-	}
-}
-
-void	 if_sav(char **line, char **sav)
+void		if_sav(char **line, char **sav)
 {
 	int i;
 
@@ -40,42 +21,41 @@ void	 if_sav(char **line, char **sav)
 		*line = ft_strjoin_f(*line, *sav);
 	if ((*sav = ft_strchr(*sav, '\n')))
 	{
-		while ((*line)[i++] != '\n' && (*line)[i] !='\0')
-			;
-		*line = ft_strsub(*line, 0, i - 1);
-		printf("COUCOU");
+		*line = ft_strsub(*line, 0, ft_f_c(*line, '\n'));
+		(*sav)++;
 	}
 }
 
-int	get_next_lin(const int fd, char **line, char **sav)
+int			g_n_l(const int fd, char **line, char **sav,char buf[BUFF_SIZE + 1])
 {
 	int		ret;
-	char	buf[BUFF_SIZE + 1];
-	int		i;
 
 	*line = NULL;
 	if (*sav)
 		if_sav(line, sav);
-	i = 0;
-	while ((ret = read(fd, buf, BUFF_SIZE)))
+	if (ft_f_c(*sav, '\n'))//si les \n ne saffiche pas modifier le ft_f_c
+		return (1);
+	while ((ret = read(fd, buf, BUFF_SIZE)) && ft_strlen(*sav) == 0)
 	{
 		buf[ret] = '\0';
 		*line = ft_strjoin_f(*line, buf);
 		if ((*sav = ft_strchr(*line, '\n')))
 		{
-			while ((*line)[i++] != '\n' && (*line)[i] !='\0')
-				;
-			*line = ft_strsub(*line, 0, i - 1);
-			(*sav)++;;
-			return (0);
+			*line = ft_strsub(*line, 0, ft_f_c(*line, '\n'));
+			(*sav)++;
+			return (1);
 		}
 	}
 	return (0);
 }
 
-int get_next_line(const int fd, char **line)
+int			get_next_line(const int fd, char **line)
 {
 	static char *sav;
-	return (get_next_lin(fd, line, &sav));
+	char buf[BUFF_SIZE + 1];
+
+	if (read(fd, buf, 0))
+		return (-1);
+	return (g_n_l(fd, line, &sav, buf));
 	
 }

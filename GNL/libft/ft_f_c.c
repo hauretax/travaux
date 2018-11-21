@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_f_c.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hutricot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/07 13:54:36 by hutricot          #+#    #+#             */
-/*   Updated: 2018/11/21 12:03:57 by hutricot         ###   ########.fr       */
+/*   Created: 2018/11/21 10:40:22 by hutricot          #+#    #+#             */
+/*   Updated: 2018/11/21 12:42:07 by hutricot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "string.h"
 
-size_t	ft_strlen(const char *str)
+int		ft_f_c(char *str, char c)
 {
 	int i;
 
 	i = 0;
 	if (str == NULL)
 		return (0);
-	while (str[i])
-		i++;
+	while (str[i++] != c && str[i] != c)
+		;
 	return (i);
 }

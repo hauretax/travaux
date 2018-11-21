@@ -16,11 +16,11 @@ int		main(int argc, char **argv)
 		return (0);
 	}
 	fd = open(argv[1], O_RDONLY);
-	get_next_line(fd, &str);
+	printf("%d:",get_next_line(fd, &str));
 	printf ("%s\n",str);
-	get_next_line(fd, &str);
+	printf("%d:",get_next_line(fd, &str));
 	printf ("%s\n",str);
-	get_next_line(fd, &str);
+	printf("%d:",get_next_line(fd, &str));
 	close(fd);
 	printf ("%s\n",str);
 	return (0);
