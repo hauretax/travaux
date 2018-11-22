@@ -1,25 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_f_c.c                                           :+:      :+:    :+:   */
+/*   ft_free.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hutricot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/21 10:40:22 by hutricot          #+#    #+#             */
-/*   Updated: 2018/11/22 13:14:47 by hutricot         ###   ########.fr       */
+/*   Created: 2018/11/22 14:00:41 by hutricot          #+#    #+#             */
+/*   Updated: 2018/11/22 14:52:54 by hutricot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "string.h"
+#include <stdlib.h>
+#include <string.h>
 
-int		ft_f_c(char *str, char c)
+int	ft_free(char *s1, char *s2)
 {
-	int i;
-
-	i = 0;
-	if (str == NULL)
-		return (0);
-	while (str[i++] != c && str[i] != c)
-		;
-	return (i);
+	if (s1 != NULL)
+	{
+		free(s1);
+		s1 = NULL;
+	}
+	if (s2 != NULL)
+	{
+		free(s2);
+		s2 = NULL;
+	}
+	return (0);
 }

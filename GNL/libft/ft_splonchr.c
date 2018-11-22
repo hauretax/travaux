@@ -6,7 +6,7 @@
 /*   By: hutricot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/21 13:54:44 by hutricot          #+#    #+#             */
-/*   Updated: 2018/11/21 14:30:31 by hutricot         ###   ########.fr       */
+/*   Updated: 2018/11/22 17:08:27 by hutricot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int		ft_splonchr(char **line, char **sav, char *buf)
 	int i;
 
 	i = 0;
-	if (*line == NULL || *sav == NULL || buf == NULL)
+	if (line == NULL || buf == NULL)
 		return (0);
 	*line = ft_strjoin_f(*line, buf);
 	if ((*sav = ft_strchr(*line, '\n')))

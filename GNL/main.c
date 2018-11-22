@@ -3,6 +3,8 @@
 #include <fcntl.h>
 #include <unistd.h>
 #include <stdio.h>
+#include "libft/libft.h"
+
 int		get_next_line(const int fd, char **line);
 
 int		main(int argc, char **argv)
@@ -18,10 +20,15 @@ int		main(int argc, char **argv)
 	fd = open(argv[1], O_RDONLY);
 	printf("%d:",get_next_line(fd, &str));
 	printf ("%s\n",str);
+	ft_free(str, NULL);
 	printf("%d:",get_next_line(fd, &str));
 	printf ("%s\n",str);
+	ft_free(str, NULL);
 	printf("%d:",get_next_line(fd, &str));
 	close(fd);
 	printf ("%s\n",str);
+	free (str);
+	str = NULL;
+	while (1);
 	return (0);
 }
