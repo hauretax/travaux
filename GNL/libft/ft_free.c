@@ -5,15 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hutricot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/22 14:00:41 by hutricot          #+#    #+#             */
-/*   Updated: 2018/11/22 14:52:54 by hutricot         ###   ########.fr       */
+/*   Created: 2018/11/26 15:25:28 by hutricot          #+#    #+#             */
+/*   Updated: 2018/11/26 15:35:29 by hutricot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <string.h>
+#include "libft.h"
 
-int	ft_free(char *s1, char *s2)
+int		ft_free(char *s1, char *s2)
 {
 	if (s1 != NULL)
 	{

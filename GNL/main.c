@@ -11,24 +11,29 @@ int		main(int argc, char **argv)
 {
 	int		fd;
 	char	*str;
+	int		i;
+	int		j;
+	int x;
 
+	i = 0;
+	x = 0;
+	j = 1;
 	if (argc != 2)
 	{
 		write(2, "bad number arg\n", 19);
 		return (0);
 	}
 	fd = open(argv[1], O_RDONLY);
-	printf("%d:",get_next_line(fd, &str));
-	printf ("%s\n",str);
-	ft_free(str, NULL);
-	printf("%d:",get_next_line(fd, &str));
-	printf ("%s\n",str);
-	ft_free(str, NULL);
-	printf("%d:",get_next_line(fd, &str));
+	while (x != 2)
+	{
+		if (j != 1 )
+			x = 2;
+	j = get_next_line(fd, &str);
+		printf("%d:", j);
+		printf ("%s\n",str);
+		ft_free(str, NULL);
+	}
 	close(fd);
-	printf ("%s\n",str);
-	free (str);
-	str = NULL;
-	while (1);
+	while(1);	
 	return (0);
 }

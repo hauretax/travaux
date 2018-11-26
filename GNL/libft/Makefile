@@ -6,7 +6,7 @@
 #    By: hutricot <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/06 18:46:03 by hutricot          #+#    #+#              #
-#    Updated: 2018/11/22 14:20:29 by hutricot         ###   ########.fr        #
+#    Updated: 2018/11/26 15:24:48 by hutricot         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,10 +16,8 @@ NAME = libft.a
 CFLAGS = -Wall -Wextra -Werror -I ./
 
 S =		ft_memset.c \
-		ft_free.c \
 		ft_strjoin_f.c \
-		ft_splonchr.c \
-		ft_f_c.c \
+		ft_free.c \
 		ft_bzero.c \
 		ft_memcpy.c \
 		ft_memccpy.c \
