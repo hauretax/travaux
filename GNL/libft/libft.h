@@ -6,7 +6,7 @@
 /*   By: hutricot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/07 10:38:03 by hutricot          #+#    #+#             */
-/*   Updated: 2018/11/26 15:25:17 by hutricot         ###   ########.fr       */
+/*   Updated: 2018/11/27 13:27:36 by hutricot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ typedef struct		s_list
 }					t_list;
 
 void				*ft_memset(void *s, int c, size_t n);
+char				*ft_alocaftchr(char *s, int c);
 int					ft_free(char *s1, char *s2);
 char				*ft_strjoin_f(char *s1, char *s2);
 void				ft_bzero(void *s, size_t n);

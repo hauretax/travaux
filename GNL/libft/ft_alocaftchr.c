@@ -1,20 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   ft_alocaftchr.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hutricot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/26 14:55:38 by hutricot          #+#    #+#             */
-/*   Updated: 2018/11/27 17:04:58 by hutricot         ###   ########.fr       */
+/*   Created: 2018/11/27 13:20:16 by hutricot          #+#    #+#             */
+/*   Updated: 2018/11/27 13:29:03 by hutricot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
-# define BUFF_SIZE 90
-# include "libft/libft.h"
+#include "libft.h"
 
-int get_next_line(const int fd, char **line);
-
-#endif
+char	*ft_alocaftchr(char *s, int c)
+{
+	size_t	i;
+	
+	i = 0;
+	while (s[i] != c && s[i] != '\0')
+		i++;
+	return (ft_strsub(s, i, ft_strlen(s)));
+}
