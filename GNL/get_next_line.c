@@ -6,7 +6,7 @@
 /*   By: hutricot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/26 14:59:56 by hutricot          #+#    #+#             */
-/*   Updated: 2018/11/28 13:16:20 by hutricot         ###   ########.fr       */
+/*   Updated: 2018/11/28 15:54:50 by hutricot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ static int	goodline(char **line, char **sav)
 	if ((*line)[i] == '\n')
 	{
 		if ((*sav = malloc((ft_strlen(*line) - i + 1) * sizeof(char))) == 0)
-			return (0);
+			return (ft_free(*line, NULL));
 		ft_strcpy(*sav, ((*line) + i + 1));
 	}
 	(*line)[i] = '\0';
@@ -37,7 +37,7 @@ static int	ft_plus(char **sav, char **line)
 
 	i = 0;
 	if ((*line = ft_strjoin_f(*line, *sav)) == 0)
-		return (0);
+		return (ft_free(*sav, *line));
 	if (ft_strstr(*sav, "\n"))
 	{
 		while (**sav != '\n' && **sav)
@@ -59,7 +59,7 @@ int			get_next_line(const int fd, char **line)
 	int				ret;
 	static char		*sav;
 
-	if (read(fd, buf, 0))
+	if (fd < 0 || !line || BUFF_SIZE <= 0)
 		return (-1);
 	*line = NULL;
 	if (sav)
@@ -69,7 +69,7 @@ int			get_next_line(const int fd, char **line)
 	{
 		buf[ret] = '\0';
 		if ((*line = ft_strjoin_f(*line, buf)) == NULL)
-			return (0);
+			return (ft_free(*line, NULL));
 		if (ft_strstr(buf, "\n"))
 			break ;
 	}
