@@ -6,7 +6,7 @@
 /*   By: hutricot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/26 14:59:56 by hutricot          #+#    #+#             */
-/*   Updated: 2018/11/28 15:54:50 by hutricot         ###   ########.fr       */
+/*   Updated: 2018/11/28 17:06:04 by hutricot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ int			get_next_line(const int fd, char **line)
 	int				ret;
 	static char		*sav;
 
-	if (fd < 0 || !line || BUFF_SIZE <= 0)
+	if (read(fd, buf, 0) || BUFF_SIZE <= 0 || !line)
 		return (-1);
 	*line = NULL;
 	if (sav)
