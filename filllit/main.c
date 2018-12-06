@@ -6,7 +6,7 @@
 /*   By: hutricot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/03 14:38:02 by hutricot          #+#    #+#             */
-/*   Updated: 2018/12/05 15:32:24 by lramard          ###   ########.fr       */
+/*   Updated: 2018/12/05 09:55:13 by hutricot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,10 +51,9 @@ int			main(int argc, char **argv)
 		return (0);
 	}
 	fd = open(argv[1], O_RDONLY);
-	if ((i = good_file(fd, tetri)))
+	if ((i = good_file(fd, tetri)) && i != 5)
 		return (0);
-	init(tetri);
+	print_test(tetri);
 	close(fd);
-	while (1);
 	return (0);
 }

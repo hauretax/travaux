@@ -6,7 +6,7 @@
 /*   By: hutricot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/03 11:12:32 by hutricot          #+#    #+#             */
-/*   Updated: 2018/12/05 15:32:26 by lramard          ###   ########.fr       */
+/*   Updated: 2018/12/05 10:08:22 by hutricot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ int		good_sqar(char tab[4][4])
 int		play_again(int fd, char b[4])
 {
 	if (!(read(fd, b, 1)))
-		return (0);
+		return (5);
 	if (b[0] != '\n')
 		return (1);
 	b[0] = '.';

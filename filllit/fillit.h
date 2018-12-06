@@ -6,7 +6,11 @@
 /*   By: lramard <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/02 14:00:50 by lramard           #+#    #+#             */
-/*   Updated: 2018/12/05 13:47:09 by hutricot         ###   ########.fr       */
+<<<<<<< HEAD
+/*   Updated: 2018/12/03 16:14:14 by hutricot         ###   ########.fr       */
+=======
+/*   Updated: 2018/12/05 11:54:42 by lramard          ###   ########.fr       */
+>>>>>>> 844d4a570c9af22075d70d45066b6c6da06091fa
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +35,7 @@ typedef	struct		s_grid
 
 int	good_file(int fd, t_tetri *tetri);
 void	init(t_tetri tetri[27]);
+char	**ft_create_grid(t_grid grid);
 int		ft_freegrid(t_grid grid);
 t_grid	ft_resolv(t_grid grid, t_tetri tetri[27]);
 void	ft_print(t_grid grid);

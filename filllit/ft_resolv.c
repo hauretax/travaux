@@ -6,11 +6,10 @@
 /*   By: lramard <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/05 11:20:25 by lramard           #+#    #+#             */
-/*   Updated: 2018/12/05 13:26:22 by hutricot         ###   ########.fr       */
+/*   Updated: 2018/12/05 11:54:38 by lramard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "fillit.h"
-
 t_grid		ft_resolv(t_grid grid, t_tetri tetri[27])
 {
 	int	i;
@@ -27,5 +26,4 @@ t_grid		ft_resolv(t_grid grid, t_tetri tetri[27])
 		}
 		i++;
 	}
-	return (grid);
 }
