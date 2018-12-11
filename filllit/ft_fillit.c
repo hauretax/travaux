@@ -1,32 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printer.c                                       :+:      :+:    :+:   */
+/*   fillit.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lramard <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/05 11:17:46 by lramard           #+#    #+#             */
-/*   Updated: 2018/12/11 12:41:58 by hutricot         ###   ########.fr       */
+/*   Created: 2018/11/29 14:33:22 by lramard           #+#    #+#             */
+/*   Updated: 2018/12/11 15:35:18 by lramard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-void	ft_print(t_grid grid)
+void	init(t_tetri tetri[27])
 {
-	int	i;
-	int	j;
+	t_grid	grid;
+	int		x;
 
-	i = 0;
-	while (i < grid.size)
-	{
-		j = 0;
-		while (j < grid.size)
-		{
-			ft_putchar(grid.grid[i][j]);
-			j++;
-		}
-		ft_putchar('\n');
-		i++;
-	}
+	x = 0;
+	grid.size = 2;
+	grid = ft_create_grid(grid);
+	grid = ft_resolv(grid, tetri);
+	if (grid.grid != NULL)
+		ft_print(grid);
+	ft_freegrid(&grid);
 }

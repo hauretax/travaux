@@ -1,32 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printer.c                                       :+:      :+:    :+:   */
+/*   ft_error.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lramard <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/05 11:17:46 by lramard           #+#    #+#             */
-/*   Updated: 2018/12/11 12:41:58 by hutricot         ###   ########.fr       */
+/*   Created: 2018/12/07 10:18:51 by lramard           #+#    #+#             */
+/*   Updated: 2018/12/11 13:56:06 by lramard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-void	ft_print(t_grid grid)
+int		ft_error(int a)
 {
-	int	i;
-	int	j;
-
-	i = 0;
-	while (i < grid.size)
-	{
-		j = 0;
-		while (j < grid.size)
-		{
-			ft_putchar(grid.grid[i][j]);
-			j++;
-		}
-		ft_putchar('\n');
-		i++;
-	}
+	if (a == 0)
+		write(1, "error\n", 6);
+	if (a == 1)
+		write(1, "usage: ./fillit source_file\n", 28);
+	return (0);
 }

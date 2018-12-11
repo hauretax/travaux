@@ -6,32 +6,38 @@
 #    By: hutricot <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/28 15:13:34 by hutricot          #+#    #+#              #
-#    Updated: 2018/12/03 11:02:59 by hutricot         ###   ########.fr        #
+#    Updated: 2018/12/11 16:10:43 by hutricot         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = fillit
 
-CFLAGS = -Wall -Wextra -I ./
+FLAGS = -Wall -Wextra -Werror
 
-L = libft/libft.a
+SRC = ft_fillit.c \
+	  ft_error.c \
+	  ft_free.c \
+	  ft_create.c \
+	  ft_printer.c \
+	  ft_resolv.c \
+	  ft_goodline.c \
+	  main.c
 
-S = fillit.c \
+OBJ = $(SRC:.c=.o)
 
-M_ALL = make -C libft/
-
-S_O = $(S:.c=.o)
+INC = fillit.h
 
 all: $(NAME)
-
-$(NAME) :  $(S_O)
-	$(M_ALL)
-	ar rc $(NAME) $(S_O) $(L)
+$(NAME) : $(INC) $(OBJ) $(SRC)
+	make -C libft
+	gcc $(FLAGS) -c $(SRC) -I$(INC)
+	gcc $(FLAGS) -o $(NAME) $(OBJ) libft/libft.a
 
 clean :
-	rm -f $(S_O)
+	rm -f $(OBJ)
+	make clean -C libft
 
 fclean : clean
-	rm -f $(NAME)
+	rm -f $(NAME) libft/libft.a
 
 re : fclean all

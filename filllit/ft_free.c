@@ -1,32 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printer.c                                       :+:      :+:    :+:   */
+/*   ft_free.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lramard <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/05 11:17:46 by lramard           #+#    #+#             */
-/*   Updated: 2018/12/11 12:41:58 by hutricot         ###   ########.fr       */
+/*   Created: 2018/12/11 13:32:01 by lramard           #+#    #+#             */
+/*   Updated: 2018/12/11 13:32:03 by lramard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-void	ft_print(t_grid grid)
+int			ft_freegrid(t_grid *grid)
 {
-	int	i;
-	int	j;
+	int i;
 
 	i = 0;
-	while (i < grid.size)
+	if ((*grid).size <= 0 || (*grid).grid == NULL)
+		return (0);
+	while (i < (*grid).size)
 	{
-		j = 0;
-		while (j < grid.size)
-		{
-			ft_putchar(grid.grid[i][j]);
-			j++;
-		}
-		ft_putchar('\n');
+		free((*grid).grid[i]);
+		(*grid).grid[i] = NULL;
 		i++;
 	}
+	free((*grid).grid);
+	(*grid).grid = NULL;
+	return (1);
 }
