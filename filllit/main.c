@@ -6,13 +6,13 @@
 /*   By: hutricot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/03 14:38:02 by hutricot          #+#    #+#             */
-/*   Updated: 2018/12/11 15:42:59 by hutricot         ###   ########.fr       */
+/*   Updated: 2018/12/12 15:00:47 by hutricot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-t_tetri		init_map(t_tetri tetri)
+static int	init_map(t_tetri *tetri)
 {
 	int i;
 	int y;
@@ -25,20 +25,22 @@ t_tetri		init_map(t_tetri tetri)
 		i = 0;
 		while (i < 4)
 		{
-			if (tetri.tab[y][i] == '#')
+			if ((*tetri).tab[y][i] == '#')
 			{
-				tetri.map[x][0] = y;
-				tetri.map[x][1] = i;
+				(*tetri).map[x][0] = y;
+				(*tetri).map[x][1] = i;
 				x++;
 			}
 			i++;
 		}
 		y++;
 	}
-	return (tetri);
+	if (x == 4)
+		return (0);
+	return (1);
 }
 
-t_tetri		ft_remap(t_tetri *tetri)
+static int	ft_remap(t_tetri *tetri)
 {
 	int x;
 	int n;
@@ -47,9 +49,10 @@ t_tetri		ft_remap(t_tetri *tetri)
 	x = 0;
 	while (x < 26)
 	{
-		if (tetri[x].tab[0][0] == '\0')
+		if (tetri[x].tab[0][0] != '.' && tetri[x].tab[0][0] != '#')
 			break ;
-		tetri[x] = init_map(tetri[x]);
+		if (init_map(&(tetri[x])))
+			return (1);
 		tab[0] = tetri[x].map[0][0];
 		tab[1] = tetri[x].map[0][1];
 		n = 0;
@@ -63,7 +66,7 @@ t_tetri		ft_remap(t_tetri *tetri)
 		tetri[x].y = 0;
 		x++;
 	}
-	return (*tetri);
+	return (0);
 }
 
 int			main(int argc, char **argv)
@@ -73,6 +76,7 @@ int			main(int argc, char **argv)
 	int		i;
 	char	b[1];
 
+	i = -1;
 	if (argc != 2)
 		return (ft_error(1));
 	fd = open(argv[1], O_RDONLY);
@@ -80,7 +84,8 @@ int			main(int argc, char **argv)
 		return (ft_error(0));
 	if (read(fd, b, 1))
 		return (ft_error(0));
-	ft_remap(tetri);
+	if (ft_remap(tetri))
+		return (ft_error(0));
 	init(tetri);
 	close(fd);
 	return (0);

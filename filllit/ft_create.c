@@ -6,13 +6,13 @@
 /*   By: lramard <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/11 13:30:46 by lramard           #+#    #+#             */
-/*   Updated: 2018/12/11 13:30:48 by lramard          ###   ########.fr       */
+/*   Updated: 2018/12/12 12:29:25 by hutricot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-void	ft_full(int size, t_grid grid)
+static void	ft_full(int size, t_grid grid)
 {
 	int i;
 	int j;
@@ -30,7 +30,7 @@ void	ft_full(int size, t_grid grid)
 	}
 }
 
-t_grid	ft_create_grid(t_grid grid)
+t_grid		ft_create_grid(t_grid grid)
 {
 	int i;
 

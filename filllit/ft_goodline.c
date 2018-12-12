@@ -6,13 +6,13 @@
 /*   By: lramard <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/11 13:30:29 by lramard           #+#    #+#             */
-/*   Updated: 2018/12/11 15:40:26 by lramard          ###   ########.fr       */
+/*   Updated: 2018/12/12 14:36:02 by hutricot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-int		many_link(char tab[4][4], int i, int y)
+static int		many_link(char tab[4][4], int i, int y)
 {
 	int h;
 
@@ -28,7 +28,7 @@ int		many_link(char tab[4][4], int i, int y)
 	return (h);
 }
 
-int		realy_good(char tab[4][4])
+static int		realy_good(char tab[4][4])
 {
 	int t[5];
 
@@ -57,7 +57,7 @@ int		realy_good(char tab[4][4])
 	return (0);
 }
 
-int		good_sqar(char tab[4][4])
+static int		good_sqar(char tab[4][4])
 {
 	int i;
 	int y;
@@ -79,7 +79,7 @@ int		good_sqar(char tab[4][4])
 	return (0);
 }
 
-int		play_again(int fd, char b[4])
+static int		play_again(int fd, char b[4])
 {
 	if (!(read(fd, b, 1)))
 		return (0);
@@ -89,32 +89,31 @@ int		play_again(int fd, char b[4])
 	return (0);
 }
 
-int		good_file(int fd, t_tetri *tetri)
+int				good_file(int fd, t_tetri *tetri)
 {
-	int		i;
-	int		x;
+	int		i[2];
 	char	b[4];
 
-	i = 0;
-	x = 0;
-	while (read(fd, b, 4) && x < 27)
+	i[0] = 0;
+	i[1] = 0;
+	while (read(fd, b, 4) && i[1] < 27)
 	{
 		if (b[0] == '\n')
 			return (1);
-		ft_strncpy(tetri[x].tab[i], b, 4);
-		i++;
+		ft_strncpy(tetri[i[1]].tab[i[0]], b, 4);
+		i[0]++;
 		read(fd, b, 1);
 		if (b[0] != '\n')
 			return (1);
-		if (i == 4)
+		if (i[0] == 4)
 		{
-			if ((i = play_again(fd, b)))
+			if ((i[0] = play_again(fd, b)))
 				return (play_again(fd, b));
-			i = 0;
-			if (good_sqar(tetri[x].tab))
+			i[0] = 0;
+			if (good_sqar(tetri[i[1]].tab))
 				return (1);
-			x++;	
+			i[1]++;
 		}
 	}
-	return ((x == 27 || b[0] != '\n') ? (1) : (0));
+	return ((i[1] == 27 || b[0] != '\n') ? (1) : (0));
 }
